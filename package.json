@@ -1,0 +1,53 @@
+{
+  "name": "@is24/react-state",
+  "author": "IS24",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "npm run lint && jest --coverage",
+    "test:ci": "jest --ci --reporters=default --reporters=jest-junit",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ci": "cross-env CI=true npx playwright test",
+    "test:e2e:verbose": "DEBUG=pw:api npx playwright test",
+    "test:e2e:debug": "PWDEBUG=1 npx playwright test",
+    "test:e2e:gen": "npx playwright codegen localhost:3000",
+    "lint": "eslint --ext tsx,ts ./src",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:ci": "npm run lint -- --format junit --quiet -o ./eslint.xml",
+    "start:storybook": "start-storybook",
+    "build:storybook": "build-storybook",
+    "build": "webpack --config webpack.pro.js",
+    "start": "cross-env DISABLE_DEV_TYPECHECKING=true webpack serve --config=webpack.dev.js",
+    "start:pro": "webpack serve --config=webpack.pro.js",
+    "analyze": "npm run build && npx source-map-explorer 'dist/static/js/*.js'"
+  },
+  "dependencies": {
+    "@js-boot/logger": "^1.0.1",
+    "@reduxjs/toolkit": "^1.5.0",
+    "is24-corecss": "^4.7.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "whatwg-fetch": "^3.5.0"
+  },
+  "devDependencies": {
+    "@js-boot/react": "^1.0.1",
+    "@storybook/addon-actions": "^6.2.8",
+    "@storybook/addon-links": "^6.2.8",
+    "@storybook/addons": "^6.2.8",
+    "@storybook/react": "^6.2.8",
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/react": "^11.2.3",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-redux": "^7.1.15",
+    "@types/react-router-dom": "^5.1.7",
+    "babel-loader": "^8.2.2",
+    "cross-env": "7.0.3",
+    "dotenv": "10.0.0",
+    "jest-fetch-mock": "^3.0.3",
+    "typescript": "^4.1.3",
+    "@playwright/test": "1.15.1",
+    "playwright": "1.15.1"
+  }
+}

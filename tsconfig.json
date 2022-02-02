@@ -1,0 +1,5 @@
+{
+  "extends": "@js-boot/react/config/typescript/tsconfig.json",
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

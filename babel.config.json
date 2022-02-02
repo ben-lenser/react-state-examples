@@ -1,0 +1,1 @@
+{ "extends": "@js-boot/react/config/babel/babel.config.json" }
