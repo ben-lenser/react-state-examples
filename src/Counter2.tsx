@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from 'is24-corecss';
 
 type CountDisplayParams = { count: number };

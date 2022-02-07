@@ -1,6 +1,5 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
 import { Button } from 'is24-corecss';
-// Lifting state up
 
 type CountDisplayParams = { count: number };
 const CountDisplay = ({ count }: CountDisplayParams) => {
