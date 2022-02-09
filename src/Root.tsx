@@ -1,14 +1,14 @@
 import React from 'react';
-import { CounterApp1 } from './counters/Counter';
-import { CounterApp2 } from './counters/Counter2';
-import { CounterApp3Dont } from './counters/Counter3Dont';
-import { CounterApp3PleaseDo } from './counters/Counter3PleaseDo';
-import { Counter4 } from './counters/Counter4/Counter4';
-import { Counter5 } from './counters/Counter5/Counter5';
-import { Counter6 } from './counters/Counter6/Counter6';
+import { QueryClientProvider } from 'react-query';
+import { CounterApp2 } from './react-query/v1';
+import { queryClient } from './react-query/v1/api';
 
 const Root: React.FC = () => {
-  return <CounterApp1 />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <CounterApp2 />
+    </QueryClientProvider>
+  );
   // return <CounterApp2 />;
   // return <CounterApp3Dont />;
   // return <CounterApp3PleaseDo />;
