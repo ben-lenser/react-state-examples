@@ -14,7 +14,11 @@ module.exports = merge(parent, common, {
       let counter = 0;
       app.use(express.json());
       app.get('/counter', function (req, res) {
+        // if (Math.random() < 0.5) {
+        //   res.sendStatus(500);
+        // } else {
         res.json({ counter });
+        // }
       });
       app.put('/counter', function (req, res) {
         counter = req.body.counter;

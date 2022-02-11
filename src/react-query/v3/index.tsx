@@ -9,7 +9,6 @@ export const CounterApp3: React.FC = () => {
   if (isError) {
     return <span>Error: {error?.message}</span>;
   }
-  console.log(isLoadingCounter);
   if (isLoadingCounter) {
     return <div>Loading</div>;
   }
