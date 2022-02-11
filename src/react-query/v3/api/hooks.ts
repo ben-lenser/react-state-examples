@@ -13,8 +13,10 @@ export function useSetCounter() {
       return setCounterAsync(counter);
     },
     {
-      onSuccess: async () => {
-        await queryClient.invalidateQueries(ServerStateKeysEnum.Counters);
+      onSuccess: async (data, variables) => {
+        queryClient.setQueriesData(ServerStateKeysEnum.Counters, () => variables);
+        // Or just reload the counter query
+        // await queryClient.invalidateQueries(QUERY_COUNTER_KEY);
       },
     }
   );

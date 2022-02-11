@@ -14,7 +14,7 @@ export const CounterApp2: React.FC = () => {
     ({ counter }) => setCounterAsync(counter),
     {
       onSuccess: async (data, variables, context) => {
-        queryClient.setQueriesData('counters', () => variables);
+        queryClient.setQueriesData(QUERY_COUNTER_KEY, () => variables);
         // Or just reload the counter query
         // await queryClient.invalidateQueries(QUERY_COUNTER_KEY);
       },
