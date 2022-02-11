@@ -1,18 +1,16 @@
 import { useMutation, useQuery, useQueryClient } from 'react-query';
-import { fetchCounter, setCounter } from './client';
+import { Counter, fetchCounterAsync, setCounterAsync } from './client';
 import { ServerStateKeysEnum } from './index';
 
-export type Counter = { counter: number };
-
 export function useGetCounter() {
-  return useQuery<Counter, Error>(ServerStateKeysEnum.Counters, () => fetchCounter());
+  return useQuery<Counter, Error>(ServerStateKeysEnum.Counters, () => fetchCounterAsync());
 }
 
 export function useSetCounter() {
   const queryClient = useQueryClient();
   return useMutation<void, Error, Counter>(
     ({ counter }) => {
-      return setCounter(counter);
+      return setCounterAsync(counter);
     },
     {
       onSuccess: async () => {

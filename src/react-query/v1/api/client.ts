@@ -1,4 +1,5 @@
 export type Counter = { counter: number };
+
 export async function setCounterAsync(counter: number) {
   await fetch(`/counter`, {
     method: 'PUT',
