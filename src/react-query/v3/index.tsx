@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'is24-corecss';
 import { useGetCounter, useSetCounter } from './api/hooks';
 
-export const CounterApp2: React.FC = () => {
+export const CounterApp3: React.FC = () => {
   const { data: counter, isLoading: isLoadingCounter, isFetching: isFetchingCounter, isError, error } = useGetCounter();
   const { mutate: setCounter, isLoading: isSettingCounter } = useSetCounter();
 
