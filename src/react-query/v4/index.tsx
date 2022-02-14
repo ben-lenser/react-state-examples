@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from 'is24-corecss';
 import { useGetCounter, useSetCounter } from './api/hooks';
 
@@ -8,7 +8,7 @@ function CountDisplay() {
 }
 
 export const Counter: React.FC = () => {
-  const { data: counter, isLoading: isLoadingCounter, isFetching: isFetchingCounter, isError, error } = useGetCounter();
+  const { data: counter, isLoading: isLoadingCounter, isError, error } = useGetCounter();
   const { mutate: setCounter, isLoading: isSettingCounter } = useSetCounter();
 
   if (isError) {
@@ -23,7 +23,6 @@ export const Counter: React.FC = () => {
     <>
       <Button onClick={increment}>{counter?.counter}</Button>
       {isSettingCounter && <div>Saving ....</div>}
-      {isFetchingCounter && <div>Fetching ....</div>}
     </>
   );
 };
