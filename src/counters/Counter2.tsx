@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button } from 'is24-corecss';
 
-type CountDisplayParams = { count: number };
-const CountDisplay = ({ count }: CountDisplayParams) => {
+type CountDisplayProps = { count: number };
+const CountDisplay = ({ count }: CountDisplayProps) => {
   return <div>The current counter count is {count}</div>;
 };
 
-type CounterParams = { count: number; onIncrementClick: () => void };
-const Counter = ({ count, onIncrementClick }: CounterParams) => {
+type CounterProps = { count: number; onIncrementClick: () => void };
+const Counter = ({ count, onIncrementClick }: CounterProps) => {
   return <Button onClick={onIncrementClick}>{count}</Button>;
 };
 
